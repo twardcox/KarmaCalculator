@@ -1,0 +1,10 @@
+module.exports.Success = 200;
+module.exports.Created = 201;
+module.exports.Partial = 206;
+module.exports.BadRequest = 400;
+module.exports.UnAuthorized = 401;
+module.exports.Forbidden = 403;
+module.exports.NotFound = 404;
+module.exports.MethodNotAllowed = 405;
+module.exports.Error = 500;
+module.exports.NotImplemented = 501;
