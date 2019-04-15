@@ -6,29 +6,27 @@ const convert = require('koa-convert');
 const nestedRouter = require('koa-recursive-resource-router');
 const query = require('unloop-koa-query');
 const decode = require('koa-decode-params');
-const session = require('./session')
-const auth = require('./koa-authorize')
+const session = require('./session');
+const auth = require('./koa-authorize');
 const resourceBuilder = require('./resource-builder')(__dirname);
-const staticRouter = require('./unloop-static-router')( path.resolve(__dirname, "../client"),
-    [
-        {
-            route: '/',
-            permissions: ['admin']}
-        ,
-        {
-            route: '/admin',
-            permissions: ['admin']
-        },
-        {
-            route: '/check-in',
-            permissions: ['admin']
-        },
-        {
-            route: '/image',
-            permissions: []
-        }
-    ]
-);
+const staticRouter = require('./unloop-static-router')(path.resolve(__dirname, '../client'), [
+	{
+		route: '/',
+		permissions: []
+	},
+	{
+		route: '/admin',
+		permissions: [ 'admin' ]
+	},
+	{
+		route: '/calculator',
+		permissions: []
+	},
+	{
+		route: '/image',
+		permissions: []
+	}
+]);
 
 const queryMiddleware = convert.back(query());
 const decodeMiddleware = convert.back(decode());

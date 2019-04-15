@@ -1,9 +1,6 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 //import "typeface-roboto";  //need to fix webpack to load css and font files first
-import EventLanding from "../components/apps/EventLanding";
+import KarmaLanding from '../components/apps/KarmaLanding';
 
-ReactDOM.render(
-    <EventLanding />,
-    document.getElementById("event-landing")
-);
+ReactDOM.render(<KarmaLanding />, document.getElementById('karma-landing'));
