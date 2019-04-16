@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
-import { FormControl, RadioGroup, FormControlLabel, FormLabel } from '@material-ui/core';
+import { FormControl, FormLabel } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { Divider } from '@material-ui/core';
 
 const styles = (theme) => ({
-	root: {},
 	formControl: {
 		padding: theme.spacing.unit * 3,
 		width: '100%'
