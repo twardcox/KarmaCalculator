@@ -1,5 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Calculator from '../../components/apps/Calculator';
+import KarmaCalculator from '../../components/apps/karmaCalculator';
 
-ReactDOM.render(<Calculator />, document.getElementById('calculator'));
+ReactDOM.render(<KarmaCalculator />, document.getElementById('calculator'));

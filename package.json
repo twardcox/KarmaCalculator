@@ -39,6 +39,7 @@
 		"crypto": "^1.0.1",
 		"hoist-non-react-statics": "^3.3.0",
 		"koa": "^2.7.0",
+		"koa-auth-wrapper": "^1.0.1",
 		"koa-bodyparser": "^4.2.1",
 		"koa-convert": "^1.2.0",
 		"koa-decode-params": "^1.0.0",
@@ -51,6 +52,7 @@
 		"koa-router": "^7.4.0",
 		"koa-session": "^5.10.1",
 		"koa-static": "^5.0.0",
+		"koa-user-context": "^1.0.0",
 		"node-time-ago": "^1.0.0",
 		"passport-local": "^1.0.0",
 		"querystring": "^0.2.0",
@@ -60,8 +62,12 @@
 		"react-material-ui-form-validator": "^2.0.7",
 		"react-text-mask": "^5.4.3",
 		"typeface-roboto": "0.0.54",
+		"unloop-auth-session": "^1.0.0",
+		"unloop-crypt": "^1.0.0",
 		"unloop-database-dynamo": "^1.0.10",
 		"unloop-koa-query": "^1.0.0",
+		"unloop-resource-builder": "^2.0.1",
+		"unloop-static-router": "^1.0.0",
 		"webpack": "^4.29.6"
 	},
 	"devDependencies": {

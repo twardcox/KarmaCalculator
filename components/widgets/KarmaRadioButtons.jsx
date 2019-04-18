@@ -5,6 +5,8 @@ import Radio from '@material-ui/core/Radio';
 import { FormControl, FormLabel } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { Divider } from '@material-ui/core';
+import Popover from '@material-ui/core/Popover';
+import { Typography } from '@material-ui/core';
 
 const styles = (theme) => ({
 	formControl: {
@@ -21,12 +23,23 @@ const styles = (theme) => ({
 	divider: {
 		height: 5,
 		backgroundColor: theme.palette.primary.main
+	},
+	typography: {
+		color: theme.palette.error.main,
+		border: `5px solid ${theme.palette.error.main}`,
+		padding: theme.spacing.unit * 3,
+		backgroundColor: theme.palette.error.light
 	}
 });
 
-const KarmaRadioButtons = (props) => ({
+class KarmaRadioButtons extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
+
 	render() {
-		const { classes } = props;
+		const { classes } = this.props;
 
 		return (
 			<FormControl component="fieldset" className={classes.formControl}>
@@ -41,50 +54,72 @@ const KarmaRadioButtons = (props) => ({
 				<Grid container justify="space-between">
 					<Grid className={classes.grid} item xs={12} sm={2}>
 						<Radio
+							checked={this.props.selectedValue === '-2'}
+							onChange={this.props.handleChange}
+							value="-2"
+							name="Karma-value--2"
+							aria-label="-2"
+						/>
+					</Grid>
+
+					<Grid className={classes.grid} item xs={12} sm={2}>
+						<Radio
+							checked={this.props.selectedValue === '-1'}
+							onChange={this.props.handleChange}
+							value="-1"
+							name="Karma-value--1"
+							aria-label="-1"
+						/>
+					</Grid>
+
+					<Grid className={classes.grid} item xs={12} sm={2}>
+						<Radio
+							inputRef={(ref) => {
+								if (!this.state.popoverAnchor && this.props.showPrompt)
+									this.setState({ popoverAnchor: ref });
+							}}
+							aria-owns={open ? 'simple-popper' : undefined}
+							aria-haspopup="true"
+							checked={this.props.selectedValue === '0'}
+							onChange={this.props.handleChange}
+							value="0"
+							name="Karma-value-0"
+							aria-label="0"
+						/>
+						<Popover
+							id="simple-popper"
+							open={this.props.showPrompt}
+							anchorOrigin={{
+								vertical: 'bottom',
+								horizontal: 'center'
+							}}
+							transformOrigin={{
+								vertical: 'top',
+								horizontal: 'center'
+							}}
+							anchorEl={this.state.popoverAnchor}
+							anchorReference="anchorEl"
+						>
+							<Typography className={classes.typography}>Please make a selection.</Typography>
+						</Popover>
+					</Grid>
+
+					<Grid className={classes.grid} item xs={12} sm={2}>
+						<Radio
 							checked={this.props.selectedValue === '1'}
-							onChange={props.handleChange}
+							onChange={this.props.handleChange}
 							value="1"
-							name="radio-button-demo"
+							name="Karma-value-1"
 							aria-label="1"
 						/>
 					</Grid>
-
 					<Grid className={classes.grid} item xs={12} sm={2}>
 						<Radio
 							checked={this.props.selectedValue === '2'}
-							onChange={props.handleChange}
+							onChange={this.props.handleChange}
 							value="2"
-							name="radio-button-demo"
+							name="Karma-value-2"
 							aria-label="2"
-						/>
-					</Grid>
-
-					<Grid className={classes.grid} item xs={12} sm={2}>
-						<Radio
-							checked={this.props.selectedValue === '3'}
-							onChange={props.handleChange}
-							value="3"
-							name="radio-button-demo"
-							aria-label="3"
-						/>
-					</Grid>
-
-					<Grid className={classes.grid} item xs={12} sm={2}>
-						<Radio
-							checked={this.props.selectedValue === '4'}
-							onChange={props.handleChange}
-							value="4"
-							name="radio-button-demo"
-							aria-label="4"
-						/>
-					</Grid>
-					<Grid className={classes.grid} item xs={12} sm={2}>
-						<Radio
-							checked={this.props.selectedValue === '5'}
-							onChange={props.handleChange}
-							value="5"
-							name="radio-button-demo"
-							aria-label="5"
 						/>
 					</Grid>
 				</Grid>
@@ -93,7 +128,7 @@ const KarmaRadioButtons = (props) => ({
 			</FormControl>
 		);
 	}
-});
+}
 
 KarmaRadioButtons.propTypes = {
 	classes: PropTypes.object.isRequired

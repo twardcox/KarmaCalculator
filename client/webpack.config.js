@@ -3,6 +3,7 @@ module.exports = {
 	entry: {
 		home: __dirname + '/index.jsx',
 		calculator: __dirname + '/calculator/index.jsx',
+		karmascores: __dirname + '/karmascores/index.jsx',
 		login: __dirname + '/login/index.jsx'
 	},
 	output: {

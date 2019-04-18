@@ -17,14 +17,14 @@ class KarmaLanding extends React.Component {
 		return (
 			<Page title={'Karma Calculator'}>
 				<Section>
-					<Typography align="left" paragraph="true" variant="body2">
+					<Typography align="left" paragraph={true} variant="body2">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed
 						cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
 						ipsum. Praesent mauris. <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Fusce
 						nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.{' '}
 					</Typography>
 
-					<Typography align="left" paragraph="true" variant="body2">
+					<Typography align="left" paragraph={true} variant="body2">
 						Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.{' '}
 						<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b>. Curabitur sodales ligula in
 						libero. Sed dignissim lacinia nunc. {' '}
@@ -36,7 +36,7 @@ class KarmaLanding extends React.Component {
 						ullamcorper vel, tincidunt sed, euismod in, nibh.{' '}
 					</Typography>
 
-					<Typography align="left" paragraph="true" variant="body2">
+					<Typography align="left" paragraph={true} variant="body2">
 						Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia
 						nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor
 						neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla.

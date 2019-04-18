@@ -79,11 +79,12 @@ class Page extends React.Component {
 	}
 
 	render() {
-		const { classes } = this.props;
+		const { classes, title, user, children, ...props } = this.props;
+
 		return (
-			<div>
+			<div {...props}>
 				<CssBaseline />
-				{this.props.title && (
+				{title && (
 					<AppBar position="static" color={'primary'}>
 						<Toolbar>
 							<Grid container alignItems="center" justify="center">
@@ -96,7 +97,7 @@ class Page extends React.Component {
 											color="inherit"
 											noWrap
 										>
-											<span>{this.props.title}</span>
+											<span>{title}</span>
 										</Typography>
 									</Grid>
 								</Grid>
@@ -104,7 +105,7 @@ class Page extends React.Component {
 						</Toolbar>
 					</AppBar>
 				)}
-				<div className={classes.layout}>{this.props.children}</div>
+				<div className={classes.layout}>{children}</div>
 			</div>
 		);
 	}
